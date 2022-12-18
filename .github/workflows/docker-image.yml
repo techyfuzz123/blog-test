@@ -2,7 +2,7 @@ name: Dockerize Image Server
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
   workflow_dispatch:
 
