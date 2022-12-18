@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import Router from 'next/router'
 
 /**
- * Client-side test complement to next-remote-watch
+ * Client-side test1 complement to next-remote-watch
  * Re-triggers getStaticProps when watched mdx files change
  *
  */
