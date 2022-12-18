@@ -12,9 +12,6 @@ RUN apk add tzdata && cp /usr/share/zoneinfo/Asia/Kolkata /etc/localtime && echo
 #Expose ports
 EXPOSE 3000
 
-#Change ownership
-RUN chown -R node:node /app
-
 # copy dependencies files
 COPY package.json package-lock.json /app/
 
@@ -26,6 +23,9 @@ COPY . /app
 
 # Build
 RUN npm run build
+
+#Change ownership
+RUN chown -R node:node /app
 
 #Switch User
 USER node
