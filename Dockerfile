@@ -6,9 +6,6 @@ FROM node:lts-alpine3.17
 # create & set working directory
 WORKDIR /app
 
-#Change TimeZone
-RUN apk add tzdata && cp /usr/share/zoneinfo/Asia/Kolkata /etc/localtime && echo "Asia/Kolkata" > /etc/timezone && apk del tzdata
-
 #Expose ports
 EXPOSE 3000
 
@@ -17,6 +14,9 @@ COPY package.json package-lock.json /app/
 
 # install dependencies
 RUN npm install
+
+#Change TimeZone
+RUN apk add tzdata && cp /usr/share/zoneinfo/Asia/Kolkata /etc/localtime && echo "Asia/Kolkata" > /etc/timezone && apk del tzdata
 
 # Copy source files
 COPY . /app
